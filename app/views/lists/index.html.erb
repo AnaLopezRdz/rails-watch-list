@@ -1,0 +1,19 @@
+<div class="container">
+  <% if @lists.empty? %>
+    <h1>your data base is empty</h1>
+    <% else %>
+    <% @lists.each do |list| %>
+      <h4><%= link_to list.name, list_path(list) %></h4>
+      <div >
+    <%= link_to "Edit", edit_list_path(list) %>
+    <%= link_to "Remove", list_path(list),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+    %>
+    <%= link_to "Add Bookmark", new_list_bookmark_path(list) %>
+    </div>
+    <hr>
+    <% end %>
+  <% end %>
+
+
+</div>
