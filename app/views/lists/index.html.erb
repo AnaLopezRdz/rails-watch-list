@@ -1,19 +1,31 @@
+<div class="banner">
+  <div>
+    <%# <img src="https://media.istockphoto.com/id/1372681569/nl/foto/hands-holding-a-film-slate-directing-a-movie-scene.jpg?s=612x612&w=0&k=20&c=GHBwhPaZ10BI4mKjhQGjt4Krngw1BzeyCVV9sP6ktCE=" alt="Banner Background"> %>
+    <h1>Save any kind of movies</h1>
+    <h2>Classic</h2>
+  </div>
+</div>
 <div class="container">
   <% if @lists.empty? %>
     <h1>your data base is empty</h1>
     <% else %>
     <% @lists.each do |list| %>
-      <h4><%= link_to list.name, list_path(list) %></h4>
+    <div style="background-image: url('<%= list.img_url%>')">
+        <h4><%= link_to list.name, list_path(list) %></h4>
       <div >
-    <%= link_to "Edit", edit_list_path(list) %>
-    <%= link_to "Remove", list_path(list),
-        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
-    %>
-    <%= link_to "Add Bookmark", new_list_bookmark_path(list) %>
+        <%= link_to edit_list_path(list), class: 'edit-link' do %>
+          <%= content_tag :i, '', class: 'fa-solid fa-pen-to-square' %>
+        <% end %>
+        <%= link_to list_path(list),
+              method: :delete,
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: 'delete-link' do %>
+          <%= content_tag :i, '', class: 'fa-solid fa-trash' %>
+        <% end %>
+        <%= link_to "Add Bookmark", new_list_bookmark_path(list), class: "add_bookmark" %>
+      </div>
     </div>
-    <hr>
+
     <% end %>
   <% end %>
-
-
 </div>
