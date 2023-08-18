@@ -1,0 +1,19 @@
+.button-addmovie-showpage {
+  display: flex;
+  justify-content: end;
+
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+.button-width{
+  width:150px;
+  background-color: green;
+  margin-right: 10px;
+  padding: 10px 30px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}

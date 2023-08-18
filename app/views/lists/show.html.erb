@@ -1,17 +1,36 @@
-<h1><%= @list.name %></h1>
-<h2>Bookmarks:</h2>
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li><%= bookmark.movie.title %></li>
-    <img src="<%= bookmark.movie.poster_url %>" width="200px" alt="poster">
-    <li><%= bookmark.comment %></li>
-    <%= link_to list_path(@list),
-            method: :delete,
-            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-            class: 'delete-link' do %>
-    <%= content_tag :i, '', class: 'fa-solid fa-trash' %>
+<%# <img src="https://media.istockphoto.com/id/1372681569/nl/foto/hands-holding-a-film-slate-directing-a-movie-scene.jpg?s=612x612&w=0&k=20&c=GHBwhPaZ10BI4mKjhQGjt4Krngw1BzeyCVV9sP6ktCE=" alt="Banner Background"> %>
+  <div class="banner-movie"style="background-image: url('<%= @list.img_url%>')">
+      <div>
+      <h1><%= @list.name %></h1>
+    </div>
+  </div>
+  <div class="button-addmovie-showpage">
+    <div class="button-width">
+      <%= link_to "Add Movie", new_list_path %>
+    </div>
+  </div>
+  <div class="cards-bookmarks">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="bookmark-card" >
+        <div class="h4-center-bookmark">
+          <div class="img-poster-top">
+          <img src="<%= bookmark.movie.poster_url %>"  alt="poster">
+          </div>
+          <h4 class="mt-4"><%= bookmark.movie.title %></h4>
+        </div>
+        <div class="div-p">
+          <p><%= bookmark.comment %></p>
+        </div>
+        <div class="div-delete-botton ">
+          <div class="delete-bottom">
+            <%= link_to list_path(@list),
+                    method: :delete,
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                    class: 'delete-link' do %>
+                    <%= content_tag :i, '', class: 'fa-solid fa-trash' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-    <hr>
-
-  <% end %>
-</ul>
+  </div>

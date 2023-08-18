@@ -1,5 +1,19 @@
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.button :submit %>
-<% end %>
+<%# <div class="container mt-4">
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%# <%= f.input :comment %>
+    <%#= f.association :movie %>
+    <%#= f.button :submit, class: "btn btn-primary" %>
+  <%# end %>
+<%# </div> %>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 m-auto">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment %>
+        <%= f.association :movie %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
