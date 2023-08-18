@@ -12,7 +12,9 @@
     <div class="movie-list-row">
       <% @lists.each do |list| %>
       <div class="movie-list-card"style="background-image: url('<%= list.img_url%>')">
-        <h2><%= link_to list.name, list_path(list) %></h2>
+        <div class="h2-center">
+          <h2><%= link_to list.name, list_path(list) %></h2>
+        </div>
         <div class="card-actions">
           <%= link_to edit_list_path(list), class: 'edit-link' do %>
             <%= content_tag :i, '', class: 'fa-solid fa-pen-to-square' %>

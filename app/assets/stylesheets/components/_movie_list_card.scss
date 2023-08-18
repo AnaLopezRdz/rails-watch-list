@@ -1,38 +1,57 @@
-.movie-list-card {
-  display: inline-block;
+// .movie-list-card {
+//   display: inline-block;
+//   width: 200px; /* Adjust this width as needed */
+//   height: 300px; /* Adjust this height as needed */
+//   margin: 10px;
+//   background-size: cover;
+//   background-position: center;
+//   // position: relative;
+
+// }
+
+// /* Styles for the card content */
+// .movie-list-card h2{
+//   display:flex;
+//   text-align: center;
+//   justify-content: center;
+
+//   a{
+//     color: white;
+//     text-shadow: 3px 3px 5px rgba(0, 0, 0, 5); /* Optional text shadow */
+//     text-decoration: none;
+//   }
+// }
+
+// .movie-list-card .card-actions {
+//   // position: absolute;
+//   bottom: 10px;
+//   left: 10px;
+//   a {
+//     color: white;
+//     margin-right: 10px;
+//   }
+// }
+// .edit-link .delete-link{
+//   text-decoration: none;
+// }
+
+
+// .container{
+//   display:flex;
+//   justify-content: space-evenly;
+// }
+.movie-list-row{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.movie-list-card{
   width: 200px; /* Adjust this width as needed */
   height: 300px; /* Adjust this height as needed */
   margin: 10px;
   background-size: cover;
   background-position: center;
-  position: relative;
+  display: inline-block;
 
-}
-
-/* Styles for the card content */
-.movie-list-card h2 a {
-  text-align: center;
-  justify-content: center;
-  color: white;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 5); /* Optional text shadow */
-  text-decoration: none;
-}
-
-.movie-list-card .card-actions {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  a {
-    color: white;
-    margin-right: 10px;
-  }
-}
-.edit-link .delete-link{
-  text-decoration: none;
-}
-
-
-.container{
-  display:flex;
-  justify-content: space-evenly;
 }
