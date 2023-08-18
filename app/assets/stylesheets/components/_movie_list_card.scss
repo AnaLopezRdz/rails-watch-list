@@ -1,57 +1,43 @@
-// .movie-list-card {
-//   display: inline-block;
-//   width: 200px; /* Adjust this width as needed */
-//   height: 300px; /* Adjust this height as needed */
-//   margin: 10px;
-//   background-size: cover;
-//   background-position: center;
-//   // position: relative;
 
-// }
-
-// /* Styles for the card content */
-// .movie-list-card h2{
-//   display:flex;
-//   text-align: center;
-//   justify-content: center;
-
-//   a{
-//     color: white;
-//     text-shadow: 3px 3px 5px rgba(0, 0, 0, 5); /* Optional text shadow */
-//     text-decoration: none;
-//   }
-// }
-
-// .movie-list-card .card-actions {
-//   // position: absolute;
-//   bottom: 10px;
-//   left: 10px;
-//   a {
-//     color: white;
-//     margin-right: 10px;
-//   }
-// }
-// .edit-link .delete-link{
-//   text-decoration: none;
-// }
-
-
-// .container{
-//   display:flex;
-//   justify-content: space-evenly;
-// }
 .movie-list-row{
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
 }
 
 .movie-list-card{
-  width: 200px; /* Adjust this width as needed */
+  width: 300px; /* Adjust this width as needed */
   height: 300px; /* Adjust this height as needed */
   margin: 10px;
   background-size: cover;
   background-position: center;
   display: inline-block;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 1px 5px 9px rgba(0, 0, 0, 0.5);
+}
 
+.h2-center {
+  text-align: center;
+  color: white;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.card-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  a{
+    color: white;
+  }
 }
