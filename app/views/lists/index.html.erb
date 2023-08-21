@@ -4,6 +4,11 @@
     <h2>Classic</h2>
   </div>
 </div>
+  <div class="button-addmovie-showpage">
+    <div class="button-width">
+      <%= link_to "Add List", new_list_path %>
+    </div>
+  </div>
 <div class="container mt-5" >
   <% if @lists.empty? %>
     <h1>your data base is empty</h1>

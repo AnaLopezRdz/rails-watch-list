@@ -1,36 +1,29 @@
 <%# <img src="https://media.istockphoto.com/id/1372681569/nl/foto/hands-holding-a-film-slate-directing-a-movie-scene.jpg?s=612x612&w=0&k=20&c=GHBwhPaZ10BI4mKjhQGjt4Krngw1BzeyCVV9sP6ktCE=" alt="Banner Background"> %>
-  <div class="banner-movie"style="background-image: url('<%= @list.img_url%>')">
+  <div class="banner-movie"style="background-image: url('<%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>')">
       <div>
       <h1><%= @list.name %></h1>
     </div>
   </div>
-  <div class="button-addmovie-showpage">
-    <div class="button-width">
-      <%= link_to "Add Bookmark", new_list_path %>
-    </div>
-  </div>
-  <div class="cards-bookmarks">
-    <% @list.bookmarks.each do |bookmark| %>
-      <div class="bookmark-card" >
-        <div class="h4-center-bookmark">
-          <div class="img-poster-top">
-          <img src="<%= bookmark.movie.poster_url %>"  alt="poster">
-          </div>
-          <h4 class="mt-4"><%= bookmark.movie.title %></h4>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="col">
+      <div class="card">
+        <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="Poster">
+        <div class="card-body">
+          <h5 class="card-title"><%= bookmark.movie.title %></h5>
+          <p class="card-text"><%= bookmark.comment %></p>
         </div>
-        <div class="div-p">
-          <p><%= bookmark.comment %></p>
-        </div>
-        <div class="div-delete-botton ">
-          <div class="delete-bottom">
-            <%= link_to list_path(@list),
+        <div class="card-footer">
+          <%= link_to list_path(@list),
                     method: :delete,
                     data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                    class: 'delete-link' do %>
-                    <%= content_tag :i, '', class: 'fa-solid fa-trash' %>
-            <% end %>
-          </div>
+                    class: 'btn btn-danger delete-link' do %>
+            <%= content_tag :i, '', class: 'fa-solid fa-trash' %>
+          <% end %>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
